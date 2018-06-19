@@ -14,8 +14,7 @@ import com.google.gson.*;
 
 public class CountTitles {
   static int getMovieTitles(String substr) throws IOException{  
-     
-    	URL url = new URL("https://jsonmock.hackerrank.com/api/movies/search/?Title=" + substr);   
+      URL url = new URL("https://jsonmock.hackerrank.com/api/movies/search/?Title=" + substr);   
       HttpURLConnection connect = (HttpURLConnection) url.openConnection();
       connect.setRequestMethod("GET");
       int total = 0;
@@ -27,8 +26,8 @@ public class CountTitles {
         JsonObject json = gson.fromJson(line, JsonObject.class);
         total = json.get("total").getAsInt();      
       }
-      return total;
-	} 
+   return total;
+ } 
    public static void main(String[] args) throws IOException{
      Scanner in = new Scanner(System.in);
       int res;
